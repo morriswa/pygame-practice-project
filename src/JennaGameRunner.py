@@ -20,9 +20,12 @@ while running:
     # fill the screen with a color to wipe away anything from last frame
     screen.fill("purple")
 
-    pygame.draw.circle(screen, "red", player_pos, 40)
+    newRectangle = pygame.Rect(player_pos.x, 20, 40, player_pos.y)
+
+    pygame.draw.rect(screen, "red", newRectangle, 30)
 
     keys = pygame.key.get_pressed()
+
     if keys[pygame.K_w] or keys[pygame.K_UP]:
         player_pos.y -= 300 * dt
     if keys[pygame.K_s] or keys[pygame.K_DOWN]:
